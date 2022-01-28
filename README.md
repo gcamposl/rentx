@@ -3,4 +3,4 @@ Projeto criado com intuito de colocar em prática os conceitos de uma API REST c
 
 ## Estrutura do projeto
 
-![alt text](https://ibb.co/qLGxVS9)
+<a href="https://ibb.co/qLGxVS9"><img src="https://i.ibb.co/ZRsN7jK/diagrama.png" alt="diagrama" border="0"></a>
