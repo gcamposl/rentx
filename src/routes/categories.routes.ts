@@ -6,6 +6,8 @@ import { importCategoryController } from "../modules/cars/useCases/importCategor
 
 const categoriesRoutes = Router();
 
+//testes commit na main
+
 const upload = multer({
   dest: "./tmp",
 });
