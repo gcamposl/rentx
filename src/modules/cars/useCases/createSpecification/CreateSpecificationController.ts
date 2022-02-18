@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase"
 
 
-
 class CreateSpecificationController {
 
   constructor(private createSpecificationUseCase: CreateSpecificationUseCase) {
