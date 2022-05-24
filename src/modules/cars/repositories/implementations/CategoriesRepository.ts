@@ -1,18 +1,23 @@
-import { Category } from "../../model/Category";
-import { ICategoryRepository, ICreateCategoryDTO } from "../ICategoryRepository";
+import { Category } from '../../model/Category';
+import {
+  ICategoryRepository,
+  ICreateCategoryDTO,
+} from '../ICategoryRepository';
 
-//DTO -> Data Transfer Object
+// DTO -> Data Transfer Object
 
 class CategoriesRepository implements ICategoryRepository {
   private categories: Category[];
 
   private static INSTANCE: CategoriesRepository; // Singleton Pattern
 
-  private constructor() { // Singleton Pattern
+  private constructor() {
+    // Singleton Pattern
     this.categories = [];
   }
 
-  public static getInstance(): CategoriesRepository { // Singleton Pattern
+  public static getInstance(): CategoriesRepository {
+    // Singleton Pattern
 
     if (!CategoriesRepository.INSTANCE) {
       CategoriesRepository.INSTANCE = new CategoriesRepository();
@@ -26,7 +31,7 @@ class CategoriesRepository implements ICategoryRepository {
     Object.assign(category, {
       name,
       description,
-      created_at: new Date()
+      created_at: new Date(),
     });
 
     this.categories.push(category);
@@ -42,4 +47,4 @@ class CategoriesRepository implements ICategoryRepository {
   }
 }
 
-export { CategoriesRepository }
+export { CategoriesRepository };
