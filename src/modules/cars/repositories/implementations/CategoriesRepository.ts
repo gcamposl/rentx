@@ -11,21 +11,18 @@ import {
 class CategoriesRepository implements ICategoryRepository {
   private repository: Repository<Category>;
 
-  // Singleton Pattern
-  private static INSTANCE: CategoriesRepository;
-
-  private constructor() {
+  constructor() {
     this.repository = getRepository(Category);
   }
 
-  public static getInstance(): CategoriesRepository {
-    // Singleton Pattern
+  // public static getInstance(): CategoriesRepository {
+  //   // Singleton Pattern
 
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository();
-    }
-    return CategoriesRepository.INSTANCE;
-  }
+  //   if (!CategoriesRepository.INSTANCE) {
+  //     CategoriesRepository.INSTANCE = new CategoriesRepository();
+  //   }
+  //   return CategoriesRepository.INSTANCE;
+  // }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({
