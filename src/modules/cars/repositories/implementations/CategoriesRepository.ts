@@ -6,23 +6,12 @@ import {
   ICreateCategoryDTO,
 } from '../ICategoryRepository';
 
-// DTO -> Data Transfer Object
-
 class CategoriesRepository implements ICategoryRepository {
   private repository: Repository<Category>;
 
   constructor() {
     this.repository = getRepository(Category);
   }
-
-  // public static getInstance(): CategoriesRepository {
-  //   // Singleton Pattern
-
-  //   if (!CategoriesRepository.INSTANCE) {
-  //     CategoriesRepository.INSTANCE = new CategoriesRepository();
-  //   }
-  //   return CategoriesRepository.INSTANCE;
-  // }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({
@@ -39,7 +28,6 @@ class CategoriesRepository implements ICategoryRepository {
   }
 
   async findByName(name: string): Promise<Category> {
-    // Select * from categories where name = "name" limit 1
     const category = await this.repository.findOne({ name });
     return category;
   }
