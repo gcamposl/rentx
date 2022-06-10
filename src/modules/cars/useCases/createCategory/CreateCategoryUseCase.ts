@@ -9,7 +9,7 @@ interface IRequest {
   name: string;
   description: string;
 }
-
+@injectable()
 class CreateCategoryUseCase {
   constructor(
     @inject('CategoriesRepository')
