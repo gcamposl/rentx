@@ -17,7 +17,11 @@ const listCategoriesController = new ListCategoriesController();
 
 categoriesRoutes.post('/', createCategoryController.handle);
 
-categoriesRoutes.post('/import', importCategoryController.handle);
+categoriesRoutes.post(
+  '/import',
+  upload.single('file'),
+  importCategoryController.handle
+);
 
 categoriesRoutes.get('/', listCategoriesController.handle);
 
